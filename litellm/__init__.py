@@ -216,6 +216,9 @@ add_user_information_to_llm_headers: Optional[bool] = (
 overwrite_user_with_key_hash: bool = (
     False  # force the outgoing `user` param to the hashed api key, so providers see a stable, tamper-proof id
 )
+bedrock_request_metadata_fields: Optional[List[str]] = (
+    None  # allow-list of `user_api_key_*` fields (+ `spend_logs_metadata`) sent as Bedrock `requestMetadata`
+)
 store_audit_logs = False  # Enterprise feature, allow users to see audit logs
 skip_system_message_in_guardrail: bool = False
 skip_tool_message_in_guardrail: bool = False
